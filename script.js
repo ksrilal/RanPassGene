@@ -47,16 +47,14 @@ function generatePassword(lower, upper, number, symbol, length){
         return ''
     }
     
-    for(let i=0; i<length; i += typesCount){
+    for(let i=0; i<20; i += typesCount){
         typesArray.forEach(type => {
             const funcName = Object.keys(type)[0]
             generatedPassword += randomFunc[funcName]()
         })
     }
 
-    const finalPassword = generatedPassword.slice(0, length)
-
-    return shuffle(finalPassword)
+    return finalPassword = shuffle(generatedPassword).slice(0, length)
 }
 
 function shuffle(s) {
